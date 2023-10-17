@@ -1,0 +1,22 @@
+<nav class="navbar navbar-dark bg-dark sticky-top mb-3">
+    <div class="container text-white" id="navbarContainer">
+        <a class="navbar-brand" href="#">
+            <img src="images/nasa-logo.png" alt="nasa-logo" class="me-2">NASA-book
+        </a>
+        <form action="#" id="datePicker">
+            <div class="row">
+                <div class="col">
+                    <input type="date" id="date" name="date" class="form-control">
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-primary">show</button>
+                </div>
+            </div>
+        </form>
+        <form action="/userSession/logout" method="post" class="fs-5">
+            welcome <span id="username"></span>
+            <button id="logout" class="btn btn-link text-danger ms-4 mb-1 fs-5"
+                    type="submit">logout</button>
+        </form>
+    </div>
+</nav>

@@ -1,0 +1,47 @@
+<%- include('includes/head.ejs') %>
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-8">
+            <div class="text-center mb-4">
+                <img class="img-fluid" src="/images/nasa.png" alt="nasa logo">
+                <h2>Please register</h2>
+                <% if(error) {%>
+                    <div class="alert alert-danger mt-4" role="alert">
+                        <%= message %>
+                    </div>
+                <%}%>
+            </div>
+            <form action="./saveCookie" method="post">
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control form-control-lg" name="email" id="email"
+                               value="<%= detailsExist ? details.email : '' %>"
+                               placeholder="name@example.com" maxlength="32" required>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control form-control-lg" name="firstName" id="firstName"
+                               value="<%= detailsExist ? details.firstName : '' %>"
+                               placeholder="Enter your first name" pattern="[a-zA-Z\s]+" minlength="3" maxlength="32" required
+                               title="input must be alphabetic only, minimum length 3 chars, and maximum length 32 chars">
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control form-control-lg" name="lastName" id="lastName"
+                               value="<%= detailsExist ? details.lastName : '' %>"
+                               placeholder="Enter your last name" pattern="[a-zA-Z\s]+" minlength="3" maxlength="32" required
+                               title="input must be alphabetic only, minimum length 3 chars, and maximum length 32 chars">
+                    </div>
+                    <div class="col-12 mt-2">
+                        <button type="submit" class="btn btn-lg btn-primary w-100">Next</button>
+                    </div>
+                </div>
+            </form>
+            <p class="text-center mt-3">already registered? go to <a href="/">login</a> page</p>
+        </div>
+    </div>
+</div>
+
+<%- include('includes/end.ejs') %>

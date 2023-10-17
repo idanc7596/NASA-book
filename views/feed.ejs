@@ -1,0 +1,36 @@
+<%- include('includes/head.ejs') %>
+<%- include('includes/navbar.ejs') %>
+
+<div class="container">
+    <div id="images" class="row">
+    </div>
+    <div class="text-center">
+        <div id="spinner" class="spinner-border spinner-border-xl text-primary d-none m-3" role="status"
+             style="width: 3rem; height: 3rem;">
+        </div>
+        <button id="moreButton" class="btn btn-primary mb-4 d-none">Load more</button>
+    </div>
+</div>
+
+
+<div id="errorMessageModal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-danger">Error <span id="errorCode"></span></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p id="errorMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="javascripts/app.js"></script>
+
+<%- include('includes/end.ejs') %>
